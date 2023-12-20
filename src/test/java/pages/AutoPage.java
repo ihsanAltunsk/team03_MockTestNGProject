@@ -152,4 +152,7 @@ public class AutoPage {
     @FindBy(xpath = "//*[@class='form-control']")
     public  WebElement textArea;
 
+    @FindBy(xpath = "//*[h2='Subscription']")
+    public WebElement subscrıptıon;
+
 }

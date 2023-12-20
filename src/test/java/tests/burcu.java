@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -38,5 +39,32 @@ public class burcu {
         //Assert.assertTrue(autoPage.Loggedinas.isDisplayed());
 
         Driver.quitDriver();
+    }
+    @Test
+    public void testcase06() {
+
+
+        // 1. Launch browser
+        //2. Navigate to url https://automationexercise.com(url 'ye gıt)
+        Driver.getDriver().get(ConfigReader.getProperty("autoUrl1"));
+        //3. Verify that home page is visible successfully(ana sayfanın basarıyla gorunur oldugunu dogrulayın)
+        AutoPage autoPage=new AutoPage();
+        SoftAssert softAssert = new SoftAssert();
+        String expectedUrl = "https://automationexercise.com";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+        softAssert.assertEquals(actualUrl,expectedUrl);
+        //4. Scroll down to footer(alt bılgıye dogru asagı kaydır)
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.subscrıptıon);
+
+        //5. Verify text 'SUBSCRIPTION'(metın abonelıgını dogrula)
+        Assert.assertTrue(autoPage.subscrıptıon.isDisplayed());
+        // 6. Enter email address in input and click arrow button(girise eposta adresını gırın ve ok dugmesıne tıklayın)
+        // autoPage.emailauto.sendKeys(ConfigReader.getProperty("wisequarter@gmail.com"));
+        // autoPage.emailauto.click();
+
+
+        //7. Verify success message 'You have been successfully subscribed!' is visible(basarıyla abone oldugunuzu dogrulayan basarı mesajının görunur oldugunu dogrulayn)
+        Assert.assertTrue(autoPage.subscrıptıon.isDisplayed());
     }
 }
