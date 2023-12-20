@@ -55,16 +55,16 @@ public class burcu {
         softAssert.assertEquals(actualUrl,expectedUrl);
         //4. Scroll down to footer(alt bılgıye dogru asagı kaydır)
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.subscrıptıon);
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.subscription);
 
         //5. Verify text 'SUBSCRIPTION'(metın abonelıgını dogrula)
-        Assert.assertTrue(autoPage.subscrıptıon.isDisplayed());
+        Assert.assertTrue(autoPage.subscription.isDisplayed());
         // 6. Enter email address in input and click arrow button(girise eposta adresını gırın ve ok dugmesıne tıklayın)
         // autoPage.emailauto.sendKeys(ConfigReader.getProperty("wisequarter@gmail.com"));
         // autoPage.emailauto.click();
 
 
         //7. Verify success message 'You have been successfully subscribed!' is visible(basarıyla abone oldugunuzu dogrulayan basarı mesajının görunur oldugunu dogrulayn)
-        Assert.assertTrue(autoPage.subscrıptıon.isDisplayed());
+        Assert.assertTrue(autoPage.subscription.isDisplayed());
     }
 }
