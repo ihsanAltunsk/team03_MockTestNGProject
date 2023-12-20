@@ -145,5 +145,29 @@ public class murat {
     @Test(groups = {"regression","murat"},priority = 11)
     public void testCase11(){
 
+        //1. Launch browser
+        //2. Navigate to url 'http://automationexercise.com'
+        Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
+
+        //3. Verify that home page is visible successfully
+        Assert.assertTrue(autoPage.homepagelink.isEnabled());
+
+        //4. Click 'Cart' button
+        autoPage.cartButton.click();
+
+        //5. Scroll down to footer
+        actions.sendKeys(Keys.PAGE_DOWN).build().perform();
+
+        //6. Verify text 'SUBSCRIPTION'
+        Assert.assertTrue(autoPage.subscription.isDisplayed());
+
+        //7. Enter email address in input and click arrow button
+        autoPage.subscribeEmail.sendKeys(faker.internet().emailAddress());
+        autoPage.subscribeEmailArrow.click();
+
+        //8. Verify success message 'You have been successfully subscribed!' is visible
+        Assert.assertTrue(autoPage.successSubscribe.isDisplayed());
+
+        Driver.closeDriver();
     }
 }

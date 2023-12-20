@@ -223,7 +223,7 @@ public class AutoPage {
     public WebElement testCasesButton;
 
     @FindBy(xpath = "//*[h2='Subscription']")
-    public WebElement subscrıptıon;
+    public WebElement subscription;
 
     @FindBy(xpath = "//*[text()='Test Cases']")
     public WebElement navigatedToTestCasesPage;
@@ -251,4 +251,14 @@ public class AutoPage {
 
     @FindBy(xpath = "//*[@class='alert-success alert']")
     public  WebElement orderPlacedSuccesVerify;
+
+    @FindBy(id = "susbscribe_email")
+    public WebElement subscribeEmail;
+
+    @FindBy(xpath = "//i[@class='fa fa-arrow-circle-o-right']")
+    public WebElement subscribeEmailArrow;
+
+    @FindBy(id = "success-subscribe")
+    public WebElement successSubscribe;
+
 }
