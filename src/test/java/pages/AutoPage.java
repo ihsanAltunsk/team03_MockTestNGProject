@@ -152,4 +152,9 @@ public class AutoPage {
     @FindBy(xpath = "//*[@class='form-control']")
     public  WebElement textArea;
 
+    @FindBy (xpath = "(//a[@href='/test_cases'])[1]")
+    public WebElement testCasesButton;
+
+    @FindBy (xpath = "//*[text()='Test Cases']")
+    public WebElement navigatedToTestCasesPage;
 }
