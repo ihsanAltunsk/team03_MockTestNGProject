@@ -65,7 +65,7 @@ public class AutoPage {
     @FindBy(xpath = "//li[10]")
     public WebElement Loggedinas;
 
-    @FindBy(xpath = "//a[@href='/delete_account']")
+    @FindBy(xpath = "//*[@href='/delete_account']")
     public WebElement deleteaccount;
 
     @FindBy (xpath = "//*[text()='New User Signup!']")
@@ -152,4 +152,22 @@ public class AutoPage {
     @FindBy(xpath = "//*[@class='form-control']")
     public  WebElement textArea;
 
+    @FindBy(xpath = "//*[text()='Place Order']")
+    public  WebElement placeOrderButton;
+    @FindBy(xpath = "//*[@data-qa='name-on-card']")
+    public  WebElement nameOnCardBox;
+    @FindBy(xpath = "//*[@data-qa='card-number']")
+    public  WebElement cardNumberBox;
+    @FindBy(xpath = "//*[@data-qa='cvc']")
+    public  WebElement cvcBox;
+    @FindBy(xpath = "//*[@data-qa='expiry-month']")
+    public  WebElement expiryMonthBox;
+    @FindBy(xpath = "//*[@data-qa='expiry-year']")
+    public  WebElement expiryYearBox;
+
+    @FindBy(xpath = "//*[@data-qa='pay-button']")
+    public  WebElement payAndConfirmButton;
+
+    @FindBy(xpath = "//*[@class='alert-success alert']")
+    public  WebElement orderPlacedSuccesVerify;
 }
