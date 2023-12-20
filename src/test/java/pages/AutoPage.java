@@ -162,6 +162,45 @@ public class AutoPage {
     @FindBy(xpath = "//i[@class='fa fa-search']")
     public WebElement searchBoxButton;
 
+    @FindBy(xpath = "//i[@class='material-icons card_travel']")
+    public WebElement  ProductsClick;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement  allProducts;
+
+    @FindBy(id = "search_product")
+    public WebElement searchproduct;
+
+    @FindBy(id = "submit_search")
+    public WebElement submitsearchClick;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement searchedProducts;
+
+    @FindBy(xpath ="(//a[@class='btn btn-default add-to-cart'])[1]")
+    public WebElement addtocart1;
+
+    @FindBy(xpath ="(//a[@class='btn btn-default add-to-cart'])[2]")
+    public WebElement addtocart2;
+
+    @FindBy(xpath = "//*[text()='Continue Shopping']")
+    public WebElement continueShopping1;
+
+    @FindBy(xpath = "//*[text()='Proceed To Checkout']")
+    public WebElement proceedToCheckout;
+
+    @FindBy(xpath = "//*[text()=' Signup / Login']")
+    public WebElement signInLoginLinki20;
+
+    @FindBy(xpath = "//input[@data-qa='login-email']")
+    public WebElement emailBox1;
+
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordBox1;
+
+    @FindBy(xpath = "//*[text()='Login']")
+    public WebElement loginLinkiClick1;
+
     @FindBy(xpath = "//h2[@class='title text-center']")
     public WebElement searchedProductsText;
 
@@ -191,14 +230,19 @@ public class AutoPage {
 
     @FindBy(xpath = "//*[text()='Place Order']")
     public  WebElement placeOrderButton;
+  
     @FindBy(xpath = "//*[@data-qa='name-on-card']")
     public  WebElement nameOnCardBox;
+  
     @FindBy(xpath = "//*[@data-qa='card-number']")
     public  WebElement cardNumberBox;
+  
     @FindBy(xpath = "//*[@data-qa='cvc']")
     public  WebElement cvcBox;
+  
     @FindBy(xpath = "//*[@data-qa='expiry-month']")
     public  WebElement expiryMonthBox;
+  
     @FindBy(xpath = "//*[@data-qa='expiry-year']")
     public  WebElement expiryYearBox;
 
