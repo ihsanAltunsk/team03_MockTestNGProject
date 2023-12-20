@@ -8,6 +8,7 @@ import utilities.Driver;
 public class AutoPage {
 
     public AutoPage(){PageFactory.initElements(Driver.getDriver(),this);}
+
     @FindBy(xpath = "(//div[@class= 'carousel-inner'])[1]")
     public WebElement homePageSlider;
 
@@ -151,6 +152,42 @@ public class AutoPage {
 
     @FindBy(xpath = "//*[@class='form-control']")
     public  WebElement textArea;
+  
+    @FindBy(xpath ="//li[@class='active']")
+    public WebElement shoppingCart;
+  
+    @FindBy(id = "search_product")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//i[@class='fa fa-search']")
+    public WebElement searchBoxButton;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement searchedProductsText;
+
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement allProductsText;
+
+    @FindBy(xpath = "//a[@class='btn btn-default check_out']")
+    public WebElement proceedToCheckoutLinki;
+
+    @FindBy(xpath = "//*[text()='Your delivery address']")
+    public WebElement Yourdeliveryaddress;
+
+    @FindBy(xpath = "//*[@class='form-control']")
+    public WebElement commentTextArea;
+
+    @FindBy(xpath = "//*[@href='/payment']")
+    public WebElement placeOrder;
+
+    @FindBy(xpath = "(//a[@href='/test_cases'])[1]")
+    public WebElement testCasesButton;
+
+    @FindBy(xpath = "//*[h2='Subscription']")
+    public WebElement subscrıptıon;
+
+    @FindBy(xpath = "//*[text()='Test Cases']")
+    public WebElement navigatedToTestCasesPage;
 
     @FindBy(xpath = "//*[text()='Place Order']")
     public  WebElement placeOrderButton;
