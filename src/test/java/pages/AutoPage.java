@@ -167,4 +167,9 @@ public class AutoPage {
     public WebElement placeOrder;
 
 
+    @FindBy (xpath = "(//a[@href='/test_cases'])[1]")
+    public WebElement testCasesButton;
+
+    @FindBy (xpath = "//*[text()='Test Cases']")
+    public WebElement navigatedToTestCasesPage;
 }

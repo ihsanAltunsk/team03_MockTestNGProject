@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import pages.AutoPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class senayda {
 
@@ -40,5 +41,27 @@ public class senayda {
         Assert.assertTrue(autoPage.hataMesaji.isDisplayed());
 
         Driver.quitDriver();
+    }
+
+    @Test
+    public void testCase07(){
+
+        // 1. Launch browser
+        //2. Navigate to url 'http://automationexercise.com'
+        Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
+
+        //3. Verify that home page is visible successfully
+        String expectedUrl = "https://www.automationexercise.com/";
+        String actualUrl = Driver.getDriver().getCurrentUrl();
+
+        //4. Click on 'Test Cases' button
+        AutoPage autoPage = new AutoPage();
+        autoPage.testCasesButton.click();
+
+        //5. Verify user is navigated to test cases page successfully
+        Assert.assertTrue(autoPage.navigatedToTestCasesPage.isDisplayed());
+
+        Driver.quitDriver();
+
     }
 }
