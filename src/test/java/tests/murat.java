@@ -9,7 +9,7 @@ import pages.AutoPage;
 import pages.AutoSignUpPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-
+import utilities.ReusableMethods;
 
 public class murat {
     AutoPage autoPage = new AutoPage();
@@ -116,6 +116,30 @@ public class murat {
     @Test(groups = {"regression","murat"},priority = 9)
     public void testCase9(){
 
+        //1. Launch browser
+        //2. Navigate to url 'http://automationexercise.com'
+        Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
+
+        //3. Verify that home page is visible successfully
+        Assert.assertTrue(autoPage.homepagelink.isEnabled());
+
+        //4. Click on 'Products' button
+        autoPage.productsLinki.click();
+
+        //5. Verify user is navigated to ALL PRODUCTS page successfully
+        Assert.assertTrue(autoPage.allProductsText.isDisplayed());
+
+        //6. Enter product name in search input and click search button
+        autoPage.searchBox.sendKeys(ConfigReader.getProperty("product"));
+        autoPage.searchBoxButton.click();
+
+        //7. Verify 'SEARCHED PRODUCTS' is visible
+        Assert.assertTrue(autoPage.searchedProductsText.isDisplayed());
+
+        //8. Verify all the products related to search are visible
+        Assert.assertTrue(autoPage.urunResmi.isDisplayed());
+
+        Driver.closeDriver();
     }
 
     @Test(groups = {"regression","murat"},priority = 11)
