@@ -60,6 +60,79 @@ public class azim {
     public  void test20(){
 
 
+      /*
+1. Launch browser
+2. Navigate to url 'http://automationexercise.com'
+3. Click on 'Products' button
+4. Verify user is navigated to ALL PRODUCTS page successfully
+5. Enter product name in search input and click search button
+6. Verify 'SEARCHED PRODUCTS' is visible
+7. Verify all the products related to search are visible
+8. Add those products to cart
+9. Click 'Cart' button and verify that products are visible in cart
+10. Click 'Signup / Login' button and submit login details
+11. Again, go to Cart page
+12. Verify that those products are visible in cart after login as well
+
+
+       */
+        AutoPage autoPage=new AutoPage();
+
+        //1. Launch browser
+        //2. Navigate to url 'http://automationexercise.com'
+        Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
+
+        //3. Click on 'Products' button
+        autoPage.ProductsClick.click();
+
+        //4. Verify user is navigated to ALL PRODUCTS page successfully
+        Assert.assertTrue(autoPage.allProducts.isDisplayed());
+
+        //5. Enter product name in search input and click search button
+        autoPage.searchproduct.sendKeys("DRESS");
+        autoPage.submitsearchClick.click();
+
+        //6. Verify 'SEARCHED PRODUCTS' is visible
+        Assert.assertTrue(autoPage.searchedProducts.isDisplayed());
+
+        //7. Verify all the products related to search are visible
+        Assert.assertTrue(autoPage.searchedProducts.isDisplayed());
+
+        //8. Add those products to cart
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.addtocart1);
+        ReusableMethods.bekle(1);
+
+        autoPage.continueShopping1.click();
+
+        // 9. Click 'Cart' button and verify that products are visible in cart
+        //Assert.assertTrue(automationPage.proceedToCheckout.isDisplayed());
+
+        //10. Click 'Signup / Login' button and submit login details
+        autoPage.signInLoginLinki20.click();
+
+        autoPage.emailBox1.sendKeys("azimkaya777@gmail.com");
+        autoPage.passwordBox1.sendKeys("5057906735");
+        autoPage.loginLinkiClick1.click();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Driver.closeDriver();
+
+
+
 
     }
 
