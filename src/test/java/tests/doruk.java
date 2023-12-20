@@ -14,6 +14,8 @@ import utilities.ReusableMethods;
 
 public class doruk {
 
+    // selamun aleykum arkadaşlar
+
     @Test
     public void testCase3(){
         // 1- Navigate to url 'http://automationexercise.com'
