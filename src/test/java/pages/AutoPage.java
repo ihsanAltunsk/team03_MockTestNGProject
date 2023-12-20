@@ -152,6 +152,7 @@ public class AutoPage {
 
     @FindBy(xpath = "//*[@class='form-control']")
     public  WebElement textArea;
+  
     @FindBy(xpath ="//li[@class='active']")
     public WebElement shoppingCart;
   
@@ -179,9 +180,13 @@ public class AutoPage {
     @FindBy(xpath = "//*[@href='/payment']")
     public WebElement placeOrder;
 
-    @FindBy (xpath = "(//a[@href='/test_cases'])[1]")
+    @FindBy(xpath = "(//a[@href='/test_cases'])[1]")
     public WebElement testCasesButton;
 
-    @FindBy (xpath = "//*[text()='Test Cases']")
+    @FindBy(xpath = "//*[h2='Subscription']")
+    public WebElement subscrıptıon;
+
+    @FindBy(xpath = "//*[text()='Test Cases']")
     public WebElement navigatedToTestCasesPage;
+
 }
