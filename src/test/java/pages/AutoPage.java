@@ -151,5 +151,20 @@ public class AutoPage {
 
     @FindBy(xpath = "//*[@class='form-control']")
     public  WebElement textArea;
+    @FindBy(xpath ="//li[@class='active']")
+    public WebElement shoppingCart;
+
+    @FindBy(xpath = "//a[@class='btn btn-default check_out']")
+    public WebElement proceedToCheckoutLinki;
+
+    @FindBy(xpath = "//*[text()='Your delivery address']")
+    public WebElement Yourdeliveryaddress;
+
+    @FindBy(xpath = "//*[@class='form-control']")
+    public WebElement commentTextArea;
+
+    @FindBy(xpath = "//*[@href='/payment']")
+    public WebElement placeOrder;
+
 
 }
