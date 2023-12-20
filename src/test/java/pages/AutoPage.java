@@ -223,26 +223,26 @@ public class AutoPage {
     public WebElement testCasesButton;
 
     @FindBy(xpath = "//*[h2='Subscription']")
-    public WebElement subscrıptıon;
+    public WebElement subscription;
 
     @FindBy(xpath = "//*[text()='Test Cases']")
     public WebElement navigatedToTestCasesPage;
 
     @FindBy(xpath = "//*[text()='Place Order']")
     public  WebElement placeOrderButton;
-  
+
     @FindBy(xpath = "//*[@data-qa='name-on-card']")
     public  WebElement nameOnCardBox;
-  
+
     @FindBy(xpath = "//*[@data-qa='card-number']")
     public  WebElement cardNumberBox;
-  
+
     @FindBy(xpath = "//*[@data-qa='cvc']")
     public  WebElement cvcBox;
-  
+
     @FindBy(xpath = "//*[@data-qa='expiry-month']")
     public  WebElement expiryMonthBox;
-  
+
     @FindBy(xpath = "//*[@data-qa='expiry-year']")
     public  WebElement expiryYearBox;
 
