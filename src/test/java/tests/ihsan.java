@@ -145,25 +145,31 @@ public class ihsan {
 
         // 14- Enter description in comment text area and click 'Place Order'
         autoPage.textArea.sendKeys(faker.resolve("lorem.words"));
-
+        autoPage.placeOrderButton.click();
 
         // 15- Enter payment details: Name on Card, Card Number, CVC, Expiration date
-
+        autoPage.nameOnCardBox.sendKeys(faker.name().fullName());
+        autoPage.cardNumberBox.sendKeys(ConfigReader.getProperty("creditCardNumber"));
+        autoPage.cvcBox.sendKeys(ConfigReader.getProperty("cvc"));
+        autoPage.expiryMonthBox.sendKeys(ConfigReader.getProperty("expiryMonth"));
+        autoPage.expiryYearBox.sendKeys(ConfigReader.getProperty("expiryYear"));
 
         // 16- Click 'Pay and Confirm Order' button
-
+        autoPage.payAndConfirmButton.click();
 
         // 17- Verify success message 'Your order has been placed successfully!'
-
+        softAssert.assertTrue(autoPage.orderPlacedSuccesVerify.isDisplayed(),
+                "'Your order has been placed successfully!' is NOT visible!");
 
         // 18- Click 'Delete Account' button
-
+        autoPage.deleteaccount.click();
 
         // 19- Verify 'ACCOUNT DELETED!' and click 'Continue' button
-
+        softAssert.assertTrue(autoPage.accdeleted.isDisplayed(),
+                "'ACCOUNT DELETED!' is NOT visible!");
+        autoSignUpPage.countinuebutton.click();
 
         Driver.quitDriver();
-
     }
     @Test
     public void testCase19(){
