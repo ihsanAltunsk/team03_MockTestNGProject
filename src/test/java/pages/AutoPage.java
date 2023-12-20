@@ -8,6 +8,7 @@ import utilities.Driver;
 public class AutoPage {
 
     public AutoPage(){PageFactory.initElements(Driver.getDriver(),this);}
+
     @FindBy(xpath = "(//div[@class= 'carousel-inner'])[1]")
     public WebElement homePageSlider;
 
@@ -65,7 +66,7 @@ public class AutoPage {
     @FindBy(xpath = "//li[10]")
     public WebElement Loggedinas;
 
-    @FindBy(xpath = "//a[@href='/delete_account']")
+    @FindBy(xpath = "//*[@href='/delete_account']")
     public WebElement deleteaccount;
 
     @FindBy (xpath = "//*[text()='New User Signup!']")
@@ -151,6 +152,15 @@ public class AutoPage {
 
     @FindBy(xpath = "//*[@class='form-control']")
     public  WebElement textArea;
+  
+    @FindBy(xpath ="//li[@class='active']")
+    public WebElement shoppingCart;
+  
+    @FindBy(id = "search_product")
+    public WebElement searchBox;
+
+    @FindBy(xpath = "//i[@class='fa fa-search']")
+    public WebElement searchBoxButton;
 
     @FindBy(xpath = "//i[@class='material-icons card_travel']")
     public WebElement  ProductsClick;
@@ -179,7 +189,6 @@ public class AutoPage {
     @FindBy(xpath = "//*[text()='Proceed To Checkout']")
     public WebElement proceedToCheckout;
 
-
     @FindBy(xpath = "//*[text()=' Signup / Login']")
     public WebElement signInLoginLinki20;
 
@@ -192,6 +201,54 @@ public class AutoPage {
     @FindBy(xpath = "//*[text()='Login']")
     public WebElement loginLinkiClick1;
 
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement searchedProductsText;
 
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement allProductsText;
 
+    @FindBy(xpath = "//a[@class='btn btn-default check_out']")
+    public WebElement proceedToCheckoutLinki;
+
+    @FindBy(xpath = "//*[text()='Your delivery address']")
+    public WebElement Yourdeliveryaddress;
+
+    @FindBy(xpath = "//*[@class='form-control']")
+    public WebElement commentTextArea;
+
+    @FindBy(xpath = "//*[@href='/payment']")
+    public WebElement placeOrder;
+
+    @FindBy(xpath = "(//a[@href='/test_cases'])[1]")
+    public WebElement testCasesButton;
+
+    @FindBy(xpath = "//*[h2='Subscription']")
+    public WebElement subscrıptıon;
+
+    @FindBy(xpath = "//*[text()='Test Cases']")
+    public WebElement navigatedToTestCasesPage;
+
+    @FindBy(xpath = "//*[text()='Place Order']")
+    public  WebElement placeOrderButton;
+  
+    @FindBy(xpath = "//*[@data-qa='name-on-card']")
+    public  WebElement nameOnCardBox;
+  
+    @FindBy(xpath = "//*[@data-qa='card-number']")
+    public  WebElement cardNumberBox;
+  
+    @FindBy(xpath = "//*[@data-qa='cvc']")
+    public  WebElement cvcBox;
+  
+    @FindBy(xpath = "//*[@data-qa='expiry-month']")
+    public  WebElement expiryMonthBox;
+  
+    @FindBy(xpath = "//*[@data-qa='expiry-year']")
+    public  WebElement expiryYearBox;
+
+    @FindBy(xpath = "//*[@data-qa='pay-button']")
+    public  WebElement payAndConfirmButton;
+
+    @FindBy(xpath = "//*[@class='alert-success alert']")
+    public  WebElement orderPlacedSuccesVerify;
 }
