@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
+import java.util.List;
 
 public class AutoPage {
 
@@ -260,5 +261,23 @@ public class AutoPage {
 
     @FindBy(id = "success-subscribe")
     public WebElement successSubscribe;
+
+    @FindBy(xpath = "//li//span")
+    public List<WebElement>  brandsElements;
+
+    @FindBy(xpath = "//*[@href='/brand_products/Kookie Kids']")
+    public WebElement  kookieKidsButton;
+
+    @FindBy(xpath = "//img[@alt='ecommerce website products']")
+    public List<WebElement> productElements;
+
+    @FindBy(xpath = "//*[@href='/brand_products/Biba']")
+    public WebElement  bibaButton;
+
+
+
+
+
+
 
 }
