@@ -278,9 +278,27 @@ public class AutoPage {
     @FindBy (xpath = "//p[text()='Category: Women > Tops']")
     public WebElement categoryElementi;
 
-   @FindBy (xpath = "//*[text()='Rs. 500']")
+    @FindBy (xpath = "//*[text()='Rs. 500']")
     public WebElement priceElementi;
 
+    @FindBy(xpath = "//h2[@class='title text-center']")
+    public WebElement womenDressProductsText;
 
+    @FindBy(xpath =" (//a[@style='color: brown;'])[1]")
+    public WebElement viewProducWomentClick;
 
+    @FindBy(xpath = "//*[text()='Write Your Review']")
+    public WebElement writeYourReviewText;
+
+    @FindBy(xpath = "//input[@type='text']")
+    public WebElement yourReviewNameBox;
+
+    @FindBy(xpath = "//input[@type='email']")
+    public WebElement yourReviewİmailBox;
+
+    @FindBy(xpath = "//textarea[@name='review']")
+    public WebElement addReviewHereBox;
+
+    @FindBy(id = "button-review")
+    public WebElement buttonReview;
 }
