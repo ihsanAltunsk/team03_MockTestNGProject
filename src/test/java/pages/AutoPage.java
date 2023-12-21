@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class AutoPage {
 
     public AutoPage(){PageFactory.initElements(Driver.getDriver(),this);}
@@ -260,5 +262,25 @@ public class AutoPage {
 
     @FindBy(id = "success-subscribe")
     public WebElement successSubscribe;
+
+    @FindBy(xpath =" (//a[@style='color: brown;'])[1]")
+    public WebElement viewProductWomenClick;
+
+    @FindBy (xpath = "//p/b")
+    public List<WebElement> productDetailsList;
+
+    @FindBy (xpath = "//*[@class='product-information']")
+    public WebElement productDetail;
+
+    @FindBy (xpath = "//*[text()='Blue Top']")
+    public WebElement productName;
+
+    @FindBy (xpath = "//p[text()='Category: Women > Tops']")
+    public WebElement categoryElementi;
+
+   @FindBy (xpath = "//*[text()='Rs. 500']")
+    public WebElement priceElementi;
+
+
 
 }
