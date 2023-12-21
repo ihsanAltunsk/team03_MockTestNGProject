@@ -1,16 +1,15 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.AutoPage;
 import pages.AutoSignUpPage;
 import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.ReusableMethods;
 
 public class ihsan {
 
@@ -177,22 +176,37 @@ public class ihsan {
         Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
 
         // 2- Click on 'Products' button
-
+        AutoPage autoPage = new AutoPage();
+        autoPage.productsLinki.click();
 
         // 3- Verify that Brands are visible on left side bar
-
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertTrue(!autoPage.brandsElements.isEmpty(),
+                "Brands are NOT visible!");
 
         // 4- Click on any brand name
-
+        JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.kookieKidsButton);
+        autoPage.kookieKidsButton.click();
 
         // 5- Verify that user is navigated to brand page and brand products are displayed
+        softAssert.assertTrue(Driver.getDriver().getCurrentUrl().equals(
+                "https://automationexercise.com/brand_products/Kookie%20Kids"),
+                "You are NOT on the selected brand page!");
 
+        softAssert.assertTrue(!autoPage.productElements.isEmpty(),
+                "Products are NOT visible");
 
         // 6- On left side bar, click on any other brand link
-
+        autoPage.bibaButton.click();
 
         // 7- Verify that user is navigated to that brand page and can see products
+        softAssert.assertTrue(Driver.getDriver().getCurrentUrl().equals(
+                "https://automationexercise.com/brand_products/Biba"),
+                "You are NOT on the selected brand page!");
 
+        softAssert.assertTrue(!autoPage.productElements.isEmpty(),
+                "Products are NOT visible");
 
         Driver.quitDriver();
     }
