@@ -1,6 +1,7 @@
 package tests;
 
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
@@ -56,11 +57,11 @@ public class azim {
 
         Driver.closeDriver();
     }
-
+@Test
     public  void test20(){
 
 
-      /*
+     /*
 1. Launch browser
 2. Navigate to url 'http://automationexercise.com'
 3. Click on 'Products' button
@@ -100,10 +101,10 @@ public class azim {
 
         //8. Add those products to cart
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
-        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.addtocart1);
-        ReusableMethods.bekle(1);
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.addToCart);
+        ReusableMethods.bekle(3);
 
-        autoPage.continueShopping1.click();
+        autoPage.addToCart.click();
 
         // 9. Click 'Cart' button and verify that products are visible in cart
         //Assert.assertTrue(automationPage.proceedToCheckout.isDisplayed());
@@ -129,7 +130,7 @@ public class azim {
 
 
 
-//Driver.closeDriver();
+Driver.closeDriver();
 
 
 
@@ -137,12 +138,59 @@ public class azim {
     }
 
 
-
+@Test
     public void test21(){
 
 
+/*
+
+1. Launch browser
+2. Navigate to url 'http://automationexercise.com'
+3. Click on 'Products' button
+4. Verify user is navigated to ALL PRODUCTS page successfully
+5. Click on 'View Product' button
+6. Verify 'Write Your Review' is visible
+7. Enter name, email and review
+8. Click 'Submit' button
+9. Verify success message 'Thank you for your review.'
+ */
 
 
-    }
+            //1. Launch browser
+
+            //2. Navigate to url 'http://automationexercise.com'
+            Driver.getDriver().get(ConfigReader.getProperty("autoUrl"));
+             AutoPage autoPage=new AutoPage();
+
+            //3. Click on 'Products' button
+            autoPage.ProductsClick.click();
+
+            //4. Verify user is navigated to ALL PRODUCTS page successfully
+            Assert.assertTrue(autoPage.allProducts.isDisplayed());
+
+            //5. Click on 'View Product' button
+            JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.getDriver();
+            javascriptExecutor.executeScript("arguments[0].scrollIntoView();",autoPage.viewProducWomentClick);
+            ReusableMethods.bekle(1);
+            autoPage.viewProducWomentClick.click();
+
+
+            //6. Verify 'Write Your Review' is visible
+            SoftAssert softAssert=new SoftAssert();
+            softAssert.assertTrue(autoPage.writeYourReviewText.isDisplayed(),"Verify 'Write Your Review' is not visible");
+
+            //7. Enter name, email and review
+            Faker faker=new Faker();
+            autoPage.yourReviewNameBox.sendKeys(faker.name().name());
+            autoPage.yourReviewİmailBox.sendKeys(faker.internet().emailAddress());
+            autoPage.addReviewHereBox.sendKeys(faker.lorem().paragraph());
+
+            //8. Click 'Submit' button
+            autoPage.buttonReview.click();
+
+    Driver.closeDriver();
+
+        }
+
 
 }
