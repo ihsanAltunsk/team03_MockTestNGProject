@@ -3,7 +3,6 @@ package tests;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -12,9 +11,14 @@ import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import java.lang.reflect.Array;
+
 public class azim {
     @Test
     public  void test18(){
+        String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+
 
 /*
 1. Launch browser
